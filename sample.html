@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="./libs/fontawesome-5.0.6/css/fontawesome-all.min.css">
+		<link rel="stylesheet" href="collapsible_megamenu.css">
+
+		<style>
+			body {
+				margin: 0;
+				padding: 0;
+				border: 0;
+				height: 110vh;
+			}
+			
+			.logo {
+				width: auto;
+				height: auto;
+				max-height: 44px;
+			}
+			
+			/* add bottom shadow*/
+			.collapsible_megamenu {
+		    box-shadow: 0 3px 5px -3px #ccc;
+			}
+		</style>
+	</head>
+	<body>
+		
+		
+		<ul class="collapsible_megamenu megamenu" data-collapse-width="700">
+			<li class="menu-toggler">
+				<img class="logo" src="logo.png" alt="logo">
+				<button type="button" class="menu-toggler-btn float-right"></button>
+			</li>
+			<li class="menu-list">
+				<div class="backdrop"></div>	<!-- backdrop for collapsed mode -->
+				<ul>
+					<li class="uncollapsed-only">
+						<a href="#">
+							<img class="logo" src="logo.png" alt="logo">
+						</a>
+					</li>
+					<li class="spacer"></li>
+					<li class="has-children">
+						<a>Main_1</a>
+						<ul>
+							<li class="has-children">
+								<a>Menu_1_1</a>
+								<ul>
+									<li><a>Menu_1_1_1</a></li>
+									<li><a>Menu_1_1_2</a></li>
+									<li><a>Menu_1_1_3</a></li>
+									<li><a>Menu_1_1_4</a></li>
+									<li><a>Menu_1_1_5</a></li>
+									<li><a>Menu_1_1_6</a></li>
+								</ul>						
+							</li>
+							<li class="has-children">
+								<a>Menu_1_2</a>
+								<ul>
+									<li><a>Menu_1_2_1</a></li>
+									<li><a>Menu_1_2_2</a></li>
+									<li><a>Menu_1_2_3</a></li>
+									<li><a>Menu_1_2_4</a></li>
+								</ul>
+							</li>
+							<li class="has-children">
+								<a>Menu_1_3</a>
+								<ul>
+									<li><a>Menu_1_3_1</a></li>
+									<li><a>Menu_1_3_2</a></li>
+									<li><a>Menu_1_3_3</a></li>
+									<li><a>Menu_1_3_4</a></li>
+								</ul>
+							</li>
+							<li class="has-children">
+								<a>Menu_1_4</a>
+								<ul>
+									<li><a>Menu_1_4_1</a></li>
+									<li><a>Menu_1_4_2</a></li>
+									<li><a>Menu_1_4_3</a></li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li><a>Main_2</a></li>
+					<li><a>Main_3</a></li>
+					<li class="has-children">
+						<a>Main_4</a>
+						<ul>
+							<li class="has-children">
+								<a>Main_4_1</a>
+								<ul>
+									<li><a>Main_4_1_1</a></li>
+									<li><a>Main_4_1_2</a></li>
+									<li><a>Main_4_1_3</a></li>
+									<li><a>Main_4_1_4</a></li>
+									<li><a>Main_4_1_5</a></li>
+									<li><a>Main_4_1_6</a></li>
+								</ul>						
+							</li>
+							<li class="has-children">
+								<a>Main_4_2</a>
+								<ul>
+									<li><a>Main_4_2_1</a></li>
+									<li><a>Main_4_2_2</a></li>
+									<li><a>Main_4_2_3</a></li>
+									<li><a>Main_4_2_4</a></li>
+								</ul>
+							</li>
+							<li class="has-children">
+								<a>Main_4_3</a>
+								<ul>
+									<li><a>Main_4_3_1</a></li>
+									<li><a>Main_4_3_2</a></li>
+									<li><a>Main_4_3_3</a></li>
+									<li><a>Main_4_3_4</a></li>
+								</ul>
+							</li>
+							<li class="has-children">
+								<a>Main_4_4</a>
+								<ul>
+									<li><a>Main_4_4_1</a></li>
+									<li><a>Main_4_4_2</a></li>
+									<li><a>Main_4_4_3</a></li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li class="spacer"></li>
+					<li class="uncollapsed-only">
+						<a href="#" class="search">
+							<i class="fas fa-search fa-flip-horizontal"></i>
+						</a>
+					</li>
+					<li class="uncollapsed-only"><button type="submit">Sign Up</button></li>
+				</ul>
+			</li>
+		</ul>		
+		
+
+		<script type="text/javascript" src="./libs/jquery-3.3.1.min.js"></script>
+		<script type="text/javascript" src="collapsible_megamenu.js"></script>
+		
+	</body>
+</html>

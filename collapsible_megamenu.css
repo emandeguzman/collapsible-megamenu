@@ -1,0 +1,122 @@
+.collapsible_megamenu {
+  background: #fff; }
+  .collapsible_megamenu,
+  .collapsible_megamenu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0; }
+  .collapsible_megamenu a {
+    cursor: pointer; }
+  .collapsible_megamenu.megamenu .menu-toggler {
+    display: none; }
+  .collapsible_megamenu.megamenu .menu-list.for-animation {
+    display: none; }
+  .collapsible_megamenu.megamenu .menu-list > ul {
+    display: flex;
+    align-items: stretch; }
+    .collapsible_megamenu.megamenu .menu-list > ul > li {
+      position: relative;
+      display: flex;
+      align-items: center;
+      flex: 0 0 auto;
+      padding: 0 5px; }
+      .collapsible_megamenu.megamenu .menu-list > ul > li:first-child {
+        padding: 0 5px 0 0; }
+      .collapsible_megamenu.megamenu .menu-list > ul > li:last-child {
+        padding: 0 0 0 5px; }
+      .collapsible_megamenu.megamenu .menu-list > ul > li.spacer {
+        flex: 1 1 auto; }
+      .collapsible_megamenu.megamenu .menu-list > ul > li > ul {
+        display: none; }
+    .collapsible_megamenu.megamenu .menu-list > ul > li:hover > ul,
+    .collapsible_megamenu.megamenu .menu-list > ul > li.selected > ul {
+      position: absolute;
+      top: 100%;
+      display: flex;
+      padding: 10px 0;
+      border: 1px solid #ccc; }
+      .collapsible_megamenu.megamenu .menu-list > ul > li:hover > ul > li,
+      .collapsible_megamenu.megamenu .menu-list > ul > li.selected > ul > li {
+        padding: 0 10px; }
+        .collapsible_megamenu.megamenu .menu-list > ul > li:hover > ul > li > a,
+        .collapsible_megamenu.megamenu .menu-list > ul > li.selected > ul > li > a {
+          display: block;
+          border-bottom: 1px solid #aaa;
+          padding: 0 0 3px 0;
+          text-align: center;
+          font-weight: bolder; }
+        .collapsible_megamenu.megamenu .menu-list > ul > li:hover > ul > li > ul > li,
+        .collapsible_megamenu.megamenu .menu-list > ul > li.selected > ul > li > ul > li {
+          padding: 5px 0 0 0; }
+  .collapsible_megamenu.collapsed {
+    position: relative; }
+    .collapsible_megamenu.collapsed .uncollapsed-only,
+    .collapsible_megamenu.collapsed li.spacer {
+      display: none !important; }
+    .collapsible_megamenu.collapsed .menu-list {
+      position: absolute;
+      left: 0;
+      top: 100%;
+      width: 100%; }
+      .collapsible_megamenu.collapsed .menu-list.animating {
+        visibility: hidden; }
+      .collapsible_megamenu.collapsed .menu-list .backdrop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: -1; }
+    .collapsible_megamenu.collapsed .menu-toggler {
+      display: flex;
+      justify-content: space-between; }
+      .collapsible_megamenu.collapsed .menu-toggler .menu-toggler-btn {
+        padding: 5px;
+        margin: 5px 5px 5px 0; }
+        .collapsible_megamenu.collapsed .menu-toggler .menu-toggler-btn:before {
+          font-weight: 600;
+          font-family: "Font Awesome 5 Free";
+          content: "\f0c9"; }
+    .collapsible_megamenu.collapsed li {
+      display: none; }
+      .collapsible_megamenu.collapsed li.selected-ancestor {
+        display: block;
+        font-size: 0; }
+      .collapsible_megamenu.collapsed li.selected-parent {
+        display: block; }
+      .collapsible_megamenu.collapsed li.selected {
+        display: block;
+        background-color: #fff;
+        font-size: 1rem; }
+        .collapsible_megamenu.collapsed li.selected.has-children > a {
+          padding: 0.5rem 0;
+          display: block;
+          width: 100%;
+          border: 1px solid #ccc;
+          text-align: center; }
+          .collapsible_megamenu.collapsed li.selected.has-children > a:before {
+            font-weight: 600;
+            font-family: "Font Awesome 5 Free";
+            /*font-size: 2.5rem;*/
+            /*line-height: 1em;*/
+            /*margin-top: -0.2rem;*/
+            content: "\f104";
+            float: left; }
+        .collapsible_megamenu.collapsed li.selected > ul > li {
+          display: block;
+          border: 1px solid #ccc;
+          /*padding: 24px 10px;*/
+          background-color: #fff; }
+          .collapsible_megamenu.collapsed li.selected > ul > li.has-children > a:after {
+            font-weight: 600;
+            font-family: "Font Awesome 5 Free";
+            content: "\f105";
+            float: right; }
+          .collapsible_megamenu.collapsed li.selected > ul > li > a {
+            padding: 0.5rem 0;
+            display: block;
+            width: 100%;
+            text-align: left; }
+
+/*# sourceMappingURL=collapsible_megamenu.css.map */

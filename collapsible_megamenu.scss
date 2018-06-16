@@ -1,0 +1,223 @@
+.collapsible_megamenu {
+  $background-color: #fff;
+
+  $megamenu-main-menuitem-padding: 0 5px;
+  $megamenu-first-main-menuitem-padding: 0 5px 0 0;
+  $megamenu-last-main-menuitem-padding: 0 0 0 5px;
+
+  $megamenu-dropdown-menubox-padding: 10px 0;
+
+  $megamenu-column-padding: 0 10px;
+  $megamenu-column-title-padding: 0 0 3px 0;
+  $megamenu-column-menuitem-padding: 5px 0 0 0;
+
+  @mixin collapsedmenu-toggler{
+    display: flex;
+    justify-content: space-between;
+  }
+  @mixin collapsedmenu-toggler-button{
+    padding: 5px;
+    margin: 5px 5px 5px 0;
+  }
+  @mixin collapsedmenu-menu-item {
+    padding: 0.5rem 0;
+  }
+
+  background: $background-color;
+
+  //remove default list styling
+  &,
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  //make all a tags have cursor pointer
+  a {
+    cursor: pointer;
+  }
+
+
+  &.megamenu {
+
+    .menu-toggler {
+      display: none;
+    }
+
+    .menu-list {
+
+      &.for-animation {
+        display: none;
+      }
+
+      >ul {
+        display: flex;
+        align-items: stretch;
+
+        //main menu item
+        >li {
+          position: relative;
+          display: flex;
+          align-items: center;
+          flex: 0 0 auto;
+          padding: $megamenu-main-menuitem-padding;
+
+          &:first-child{
+            padding: $megamenu-first-main-menuitem-padding;
+          }
+
+          &:last-child{
+            padding: $megamenu-last-main-menuitem-padding;
+          }
+
+          &.spacer {
+            flex: 1 1 auto;
+          }
+
+          >ul {
+            display: none;
+          }
+        }
+
+        //main menu item on hover
+        >li:hover,
+          >li.selected {
+
+          //main menu dropdown box
+          >ul {
+            position: absolute;
+            top: 100%;
+            display: flex;
+            padding: $megamenu-dropdown-menubox-padding;
+            border: 1px solid #ccc;
+
+
+            //megamenu columns inside dropdown box
+            > li {
+              padding: $megamenu-column-padding;
+
+              //megamenu column title
+              >a {
+                display: block;
+                border-bottom: 1px solid #aaa;
+                padding: $megamenu-column-title-padding;
+                text-align: center;
+                font-weight: bolder;
+              }
+
+              //megamenu menu items
+              >ul >li {
+                padding: $megamenu-column-menuitem-padding;
+              }
+            }
+          }
+        }
+      }
+    }
+
+  }
+
+
+  &.collapsed {
+    @mixin menu-item{
+      font-size: 1rem;
+    }
+
+    position: relative;
+
+    .uncollapsed-only, 
+    li.spacer {
+      display: none !important;
+    }
+
+    .menu-list {
+      position: absolute;
+      left: 0;
+      top: 100%;        
+      width: 100%;
+
+      &.animating {
+        visibility: hidden;
+      }
+
+      .backdrop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0,0,0,0.5);
+        z-index: -1;
+      }
+    }
+
+    .menu-toggler {
+      @include collapsedmenu-toggler;
+
+      .menu-toggler-btn {
+        @include collapsedmenu-toggler-button;
+        &:before {
+          font-weight: 600;
+          font-family: "Font Awesome 5 Free";
+          content: "\f0c9";
+        }
+      }
+    }
+
+    li {
+      display: none;
+      &.selected-ancestor {
+        display: block;
+        font-size: 0;
+      }
+      &.selected-parent {
+        display: block;
+      }
+      &.selected{
+        display: block;
+        background-color: $background-color;
+        @include menu-item;
+
+        &.has-children > a{
+          @include collapsedmenu-menu-item;
+          display: block;
+          width: 100%;
+          border: 1px solid #ccc;
+          text-align: center;
+
+          &:before {
+            font-weight: 600;
+            font-family: "Font Awesome 5 Free";
+            /*font-size: 2.5rem;*/
+            /*line-height: 1em;*/
+            /*margin-top: -0.2rem;*/
+            content: "\f104";
+            float: left;            
+          }
+        }
+
+        >ul >li {
+          display: block;
+          border: 1px solid #ccc;
+          /*padding: 24px 10px;*/
+          background-color: $background-color;
+
+          &.has-children > a:after {
+            font-weight: 600;
+            font-family: "Font Awesome 5 Free";
+            content: "\f105";
+            float: right;            
+          }
+
+          >a {
+            @include collapsedmenu-menu-item;
+            display: block;
+            width: 100%;
+            text-align: left;
+          }
+        }
+      }
+    }
+  }
+}
